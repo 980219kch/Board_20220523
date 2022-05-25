@@ -5,7 +5,7 @@
 
 <mapper namespace="Board">
     <insert id="save" parameterType="board">
-        insert into board_table(boardWriter, boardTitle, boardPassword, boardContents, boardCreateDate)
+        insert into board_table(boardWriter, boardTitle, boardPassword, boardContents, boardCreatedDate)
             values (#{boardWriter}, #{boardTitle}, #{boardPassword}, #{boardContents}, now())
     </insert>
 
@@ -30,9 +30,17 @@
     </update>
 
     <insert id="saveFile" parameterType="board">
-        insert into board_table(boardWriter, boardTitle, boardPassword, boardContents, boardCreateDate, boardFileName)
+        insert into board_table(boardWriter, boardTitle, boardPassword, boardContents, boardCreatedDate, boardFileName)
         values (#{boardWriter}, #{boardTitle}, #{boardPassword}, #{boardContents}, now(), #{boardFileName})
     </insert>
+
+    <select parameterType="java.util.HashMap" id="pagingList" resultType="board">
+        select * from board_table order by id asc limit #{start}, #{limit}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(id) from board_table
+    </select>
 </mapper>
 
 

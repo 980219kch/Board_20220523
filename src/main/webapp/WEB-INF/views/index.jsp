@@ -9,13 +9,30 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <script>
+        const saveForm = () => {
+            location.href = "/board/save";
+        }
+        const saveFileForm = () => {
+            location.href = "/board/saveFile";
+        }
+        const findAll = () => {
+            location.href = "/board/findAll";
+        }
+        const paging = () => {
+            location.href = "/board/paging";
+        }
+
+        //    회원가입: /member-save => /member/save
+        //    글쓰기 : /board-save   => /board/save
+    </script>
 </head>
 <body>
-    <h2>index.jsp</h2>
-    <a href="/board/save">글작성</a>
-    <a href="/board/saveFile">글작성(파일)</a>
-    <a href="/board/findAll">글목록</a>
-<%--회원가입: /member-save => /member/save--%>
-<%--글쓰기: /board-save => /board/save--%>
+<h2>index.jsp</h2>
+<button class="btn btn-outline-success" onclick="saveForm()">글작성</button>
+<button class="btn btn-outline-success" onclick="saveFileForm()">글작성(파일)</button>
+<button class="btn btn-outline-success" onclick="findAll()">글목록</button>
+<button class="btn btn-outline-success" onclick="paging()">페이징목록</button>
 </body>
 </html>

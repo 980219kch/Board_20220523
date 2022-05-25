@@ -18,7 +18,7 @@
     작성자: ${board.boardWriter} <br>
     비밀번호: ${board.boardPassword} <br>
     내용: ${board.boardContents} <br>
-    작성일자: ${board.boardCreateDate} <br>
+    작성일자: ${board.boardCreatedDate} <br>
     조회수: ${board.boardHits} <br>
     <img src="${pageContext.request.contextPath}/upload/${board.boardFileName}" alt="" height="100" width="100">
 
